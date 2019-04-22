@@ -40,13 +40,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\AnneeUni:
                 comment: 'Libelle Court Annee Universitaire'
             column: LIC_ANU
         datOuvOpi:
-            type: date
+            type: apogeeDate
             nullable: false
             options:
                 comment: 'Date Ouverture des Operations prealables a l"inscription'
             column: DAT_OUV_OPI
         datFrmOpi:
-            type: date
+            type: apogeeDate
             nullable: false
             options:
                 comment: 'Date Fermeture des Operations prealables a l"inscription'

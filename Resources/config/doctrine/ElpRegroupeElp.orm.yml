@@ -84,13 +84,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\ElpRegroupeElp:
                 default: 'O'
             column: ETA_ELP_PERE
         dateOuvertureLien:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date d"Ouverture du Lien'
             column: DATE_OUVERTURE_LIEN
         dateFermetureLien:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de Fermeture du Lien'

@@ -89,13 +89,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi:
                 comment: 'Libelle Commentaire de l"Element Pedagogique'
             column: LIB_CMT_ELP
         datCreElp:
-            type: date
+            type: apogeeDate
             nullable: false
             options:
                 comment: 'Date de Creation de l"Element Pedagogique'
             column: DAT_CRE_ELP
         datModElp:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de Modification de l"Element Pedagogique'
@@ -142,13 +142,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi:
                 comment: 'Nom du Responsable de l"Element Pedagogique'
             column: LIB_NOM_RSP_ELP
         datDebOpeIpe:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de début des opérations d"inscription pédagogique'
             column: DAT_DEB_OPE_IPE
         datFinOpeIpe:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fin des opérations d"inscription pédagogique'
@@ -677,7 +677,7 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi:
                 default: 'N'
             column: TEM_COM_ELP
         datModCom:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de mise à jour du témoin TEM_COM_ELP'

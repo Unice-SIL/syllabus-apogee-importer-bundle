@@ -4,7 +4,6 @@ namespace UniceSIL\SyllabusApogeeImporterBundle\Importer;
 
 
 use Symfony\Bridge\Doctrine\RegistryInterface;
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use UniceSIL\SyllabusApogeeImporterBundle\Adapter\CourseAdapter;
 use UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi;
 use UniceSIL\SyllabusImporterToolkit\Course\CourseCollection;

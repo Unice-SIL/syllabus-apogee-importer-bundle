@@ -1,11 +1,15 @@
 {
   "name": "unicesil/syllabus-apogee-importer-bundle",
   "description": "Importer to import data in Syllabus from Apogée",
+  "type" : "symfony-bundle",
   "author": [
     {
       "name": "Frédéric Casazza",
       "email": "frederic.casazza@univ-cotedazur.fr"
     }
+  ],
+  "keywords" : [
+    "Unice-SIL", "Unice", "UNS", "Syllabus", "Apogee", "Importer"
   ],
   "autoload": {
     "psr-4": {
@@ -13,6 +17,7 @@
     }
   },
   "require": {
-    "php": ">=7.1"
+    "php": ">=7.1",
+    "unicesil/syllabus-importer-toolkit": "^1.0"
   }
 }

@@ -203,13 +203,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
                 comment: 'Libellé minitel 3'
             column: LIM3_VET
         datDebMinVet:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date début inscription par minitel'
             column: DAT_DEB_MIN_VET
         datFinMinVet:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date fin inscription par minitel'
@@ -248,13 +248,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
                 comment: 'Code centre inscription pedagogique pour lequel la VET est proposable à distance'
             column: COD_CIP_ADIP_VET
         datDebMinpVet:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date d''ouverture d''une VET pour le web primo entrant'
             column: DAT_DEB_MINP_VET
         datFinMinpVet:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fermture d''une VET pour le web primo entrant'
@@ -294,61 +294,61 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
                 comment: 'Regroupement PACES'
             column: GRP_PACES_VET
         datDebPacesSim:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date d''ouverture du choix des filières Web en simulation'
             column: DAT_DEB_PACES_SIM
         datFinPacesSim:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fermeture du choix des filières Web en simulation'
             column: DAT_FIN_PACES_SIM
         datDebPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date d''ouverture du choix des filières Web en réel'
             column: DAT_DEB_PACES_REE
         datFinPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fermeture du choix des filières Web en réel'
             column: DAT_FIN_PACES_REE
         datDebProvPacesSim:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de début de la période de consultation de l''affectation provisoire de simulation'
             column: DAT_DEB_PROV_PACES_SIM
         datFinProvPacesSim:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fin de la période de consultation de l''affectation provisoire de simulation'
             column: DAT_FIN_PROV_PACES_SIM
         datDebProvPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de début de la période de consultation de l''affectation provisoire réelle'
             column: DAT_DEB_PROV_PACES_REE
         datFinProvPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fin de la période de consultation de l''affectation provisoire réelle'
             column: DAT_FIN_PROV_PACES_REE
         datDebDefPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de début de la période de consultation de l''affectation définitive'
             column: DAT_DEB_DEF_PACES_REE
         datFinDefPacesRee:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date de fin de la période de consultation de l''affectation définitive'

@@ -118,13 +118,13 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\CentreGestion:
                 default: '0'
             column: NUM_OCC_PRM_QUT_VAL
         datDebInsCge:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date Debut d"Inscription'
             column: DAT_DEB_INS_CGE
         datFinInsCge:
-            type: date
+            type: apogeeDate
             nullable: true
             options:
                 comment: 'Date Fin d"Inscription'
