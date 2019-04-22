@@ -1,0 +1,122 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\AnneeUni:
+    type: entity
+    table: ANNEE_UNI
+    id:
+        codAnu:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Code Annee Universitaire'
+            id: true
+            column: COD_ANU
+            generator:
+                strategy: SEQUENCE
+    fields:
+        etaAnuIae:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l"Annee Universitaire pour l"Inscription Administrative'
+                default: I
+            column: ETA_ANU_IAE
+        libAnu:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Annee Universitaire'
+            column: LIB_ANU
+        licAnu:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Annee Universitaire'
+            column: LIC_ANU
+        datOuvOpi:
+            type: date
+            nullable: false
+            options:
+                comment: 'Date Ouverture des Operations prealables a l"inscription'
+            column: DAT_OUV_OPI
+        datFrmOpi:
+            type: date
+            nullable: false
+            options:
+                comment: 'Date Fermeture des Operations prealables a l"inscription'
+            column: DAT_FRM_OPI
+        etaAnuIpe:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l"Année Universitaire pour l"Inscription Pédagogique'
+                default: O
+            column: ETA_ANU_IPE
+        numOccObtVdi:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier numéro de diplôme national édité'
+                default: '0'
+            column: NUM_OCC_OBT_VDI
+        etaAnuRes:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l"année universitaire pour les résultats'
+                default: F
+            column: ETA_ANU_RES
+        numOccObtVdiUni:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier numéro de diplôme d''université édité'
+                default: '0'
+            column: NUM_OCC_OBT_VDI_UNI
+        numOccObtAdd:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier numéro d''annexe descriptive éditée'
+                default: '0'
+            column: NUM_OCC_OBT_ADD
+        numOccObtCer:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier numéro de certificat édité'
+                default: '0'
+            column: NUM_OCC_OBT_CER
+        etaAnuAgl:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l''année universitaire pour l''interface Aglaé'
+                default: F
+            column: ETA_ANU_AGL
+        etaAnuApb:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l''année universitaire pour l''interface APB'
+                default: F
+            column: ETA_ANU_APB
+    lifecycleCallbacks: {  }

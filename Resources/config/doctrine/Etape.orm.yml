@@ -1,0 +1,122 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\Etape:
+    type: entity
+    table: ETAPE
+    indexes:
+        etp_fk_cyc_01_frgn:
+            columns:
+                - COD_CYC
+        etp_fk_cur_01_frgn:
+            columns:
+                - COD_CUR
+        etp_fk_act_01_frgn:
+            columns:
+                - COD_ACT
+    id:
+        codEtp:
+            type: string
+            nullable: false
+            length: 6
+            options:
+                fixed: false
+                comment: 'Code Etape'
+            id: true
+            column: COD_ETP
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libEtp:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+                comment: 'Libelle Long de l"etape'
+            column: LIB_ETP
+        licEtp:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+                comment: 'Libelle Court de l" Etape'
+            column: LIC_ETP
+        nbrMaxIaeAut:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre Maximum d"Inscriptions Annuelles Autorise'
+            column: NBR_MAX_IAE_AUT
+        temCouAccTrvEtp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Couverture Accident du Travail (O/N)'
+                default: O
+            column: TEM_COU_ACC_TRV_ETP
+        temOuvDrtSsoEtp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Ouvre Droit a la Securite Sociale (O/N)'
+                default: O
+            column: TEM_OUV_DRT_SSO_ETP
+        temTypOpi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin du Type d"OPI pour l"Etape'
+                default: L
+            column: TEM_TYP_OPI
+        nbrMaxInscDeug:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre maximum d"inscriptions en DEUG autorisé'
+            column: NBR_MAX_INSC_DEUG
+        temOuvDrtBrs:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin ouvrant droit à bourse'
+                default: 'N'
+            column: TEM_OUV_DRT_BRS
+    manyToOne:
+        codAct:
+            targetEntity: ActionLolf
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ACT:
+                    referencedColumnName: COD_ACT
+            orphanRemoval: false
+        codCur:
+            targetEntity: CursusLmd
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CUR:
+                    referencedColumnName: COD_CUR
+            orphanRemoval: false
+        codCyc:
+            targetEntity: Cycle
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CYC:
+                    referencedColumnName: COD_CYC
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

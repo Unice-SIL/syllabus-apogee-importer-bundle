@@ -1,0 +1,18 @@
+{
+  "name": "unicesil/syllabus-apogee-importer-bundle",
+  "description": "Importer to import data in Syllabus from Apogée",
+  "author": [
+    {
+      "name": "Frédéric Casazza",
+      "email": "frederic.casazza@univ-cotedazur.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "UniceSIL\\SyllabusApogeeImporterBundle\\": ""
+    }
+  },
+  "require": {
+    "php": ">=7.1"
+  }
+}

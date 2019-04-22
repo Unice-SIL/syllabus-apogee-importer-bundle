@@ -1,0 +1,136 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\ElpRegroupeElp:
+    type: entity
+    table: ELP_REGROUPE_ELP
+    indexes:
+        ere_uk_01:
+            columns:
+                - COD_ELP_FILS
+                - COD_ELP_PERE
+                - COD_LSE
+        ere_fk_erl_01_frgn:
+            columns:
+                - COD_ELP_PERE
+                - COD_LSE
+        ere_fk_lre_01frgn:
+            columns:
+                - COD_ELP_FILS
+                - COD_LSE
+    id:
+        codElpFils:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+                comment: 'Code Element Pedagogique fils'
+            id: true
+            column: COD_ELP_FILS
+            generator:
+                strategy: NONE
+        codElpPere:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+                comment: 'Code Element Pedagogique pere'
+            id: true
+            column: COD_ELP_PERE
+            generator:
+                strategy: NONE
+    fields:
+        codLse:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+                comment: 'Code Liste Elements Pedagogiques'
+            column: COD_LSE
+        etaElpFils:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l"Element Pedagogique Fils'
+                default: 'O'
+            column: ETA_ELP_FILS
+        etaLdse:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat Liste Eléments Pédagogiques'
+                default: 'O'
+            column: ETA_LSE
+        codTypeLse:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Type de la liste'
+                default: 'O'
+            column: COD_TYP_LSE
+        etaElpPere:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat de l"Element Pedagogique Pere'
+                default: 'O'
+            column: ETA_ELP_PERE
+        dateOuvertureLien:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date d"Ouverture du Lien'
+            column: DATE_OUVERTURE_LIEN
+        dateFermetureLien:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de Fermeture du Lien'
+            column: DATE_FERMETURE_LIEN
+        temSusElpPere:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant si l"element pere est suspendu'
+            column: TEM_SUS_ELP_PERE
+        temSusElpFils:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant si l"element fils est suspendu'
+                default: 'O'
+            column: TEM_SUS_ELP_FILS
+    manyToOne:
+        elpPere:
+            targetEntity: ElementPedagogi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ELP_PERE:
+                    referencedColumnName: COD_ELP
+            orphanRemoval: false
+        elpFils:
+            targetEntity: ElementPedagogi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ELP_FILS:
+                    referencedColumnName: COD_ELP
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,42 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\DomaineFormationDip:
+    type: entity
+    table: DOMAINE_FORMATION_DIP
+    id:
+        codDfd:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'code du domaine de formation'
+            id: true
+            column: COD_DFD
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libDfd:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+                comment: 'libelle du domaine de formation'
+            column: LIB_DFD
+        temEnSveDfd:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'temoin de mise en service du domaine de formation'
+                default: O
+            column: TEM_EN_SVE_DFD
+        codSisDfd:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code SISE du domaine de formation'
+            column: COD_SIS_DFD
+    lifecycleCallbacks: {  }

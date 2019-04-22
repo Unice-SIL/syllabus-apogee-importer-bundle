@@ -1,0 +1,37 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\PeriodeAno:
+    type: entity
+    table: PERIODE_ANO
+    indexes:
+        pan_fk_rna_01_frgn:
+            columns:
+                - COD_RNA
+    id:
+        codPan:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Code de la période d''anonymat'
+            id: true
+            column: COD_PAN
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libPan:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libellé de la période d''anonymat'
+            column: LIB_PAN
+        temEnSvePan:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin de mise en service de la période d''anonymat'
+            column: TEM_EN_SVE_PAN
+    lifecycleCallbacks: {  }

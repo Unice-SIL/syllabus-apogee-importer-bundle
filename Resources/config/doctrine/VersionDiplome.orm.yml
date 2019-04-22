@@ -1,0 +1,530 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionDiplome:
+    type: entity
+    table: VERSION_DIPLOME
+    indexes:
+        vdi_fk_cpe_01_frgn:
+            columns:
+                - COD_PER
+        vdi_fk_edo_01_frgn:
+            columns:
+                - COD_EDO_VDI
+        vdi_fk_etb_com_01:
+            columns:
+                - COD_ETB_COM
+        vdi_fk_tre_01_frgn:
+            columns:
+                - COD_TRE_POS
+        vdi_fk_cur_01_frgn:
+            columns:
+                - COD_CUR
+        vdi_fk_pan_04_frgn:
+            columns:
+                - COD_PAN_4
+        vdi_fk_mev_01_frgn:
+            columns:
+                - COD_MEV
+        vdi_fk_svd_01_frgn:
+            columns:
+                - COD_SVD
+        vdi_fk_fiv_01_frgn:
+            columns:
+                - COD_FIV
+        vdi_fk_dis_int_01_frgn:
+            columns:
+                - COD_SIS_VDI_INT
+        vdi_fk_pty_01_frgn:
+            columns:
+                - COD_PTY
+        vdi_fk_pan_01_frgn:
+            columns:
+                - COD_PAN_1
+        vdi_fk_pan_02_frgn:
+            columns:
+                - COD_PAN_2
+        vdi_fk_pan_03_frgn:
+            columns:
+                - COD_PAN_3
+        vdi_fk_cfm_01_frgn:
+            columns:
+                - COD_CFM
+        vdi_fk_dis_01_frgn:
+            columns:
+                - COD_SIS_VDI
+        vdi_fk_tre_02_frgn:
+            columns:
+                - COD_TRE_NEG
+        IDX_8D1E8EEF15DF69FA:
+            columns:
+                - COD_DIP
+    id:
+        codVrsVdi:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Numero de Version Diplome'
+            id: true
+            column: COD_VRS_VDI
+        codDip:
+            associationKey: true
+    fields:
+        licVdi:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+                comment: 'Libelle Court de Version Diplome'
+            column: LIC_VDI
+        daaDebHabVdi:
+            type: string
+            nullable: true
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universitaire Debut Habilitation'
+            column: DAA_DEB_HAB_VDI
+        daaDebRctVdi:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universiatire Debut Recrutement'
+            column: DAA_DEB_RCT_VDI
+        daaDebValVdi:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universitaire Debut Validation'
+            column: DAA_DEB_VAL_VDI
+        daaFinHabVdi:
+            type: string
+            nullable: true
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universitaire Fin Habilitation'
+            column: DAA_FIN_HAB_VDI
+        daaFinRctVdi:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universitaire Fin Recrutement'
+            column: DAA_FIN_RCT_VDI
+        daaFinValVdi:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Annee Universitaire Fin Validation'
+            column: DAA_FIN_VAL_VDI
+        codDosHabVdi:
+            type: string
+            nullable: true
+            length: 8
+            options:
+                fixed: false
+                comment: 'Reference du Dossier d"Habilitation'
+            column: COD_DOS_HAB_VDI
+        temNotVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si note attendue pour la version diplôme'
+                default: 'N'
+            column: TEM_NOT_VDI
+        barSaiVdi:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Barême de saisie et affichage de la version diplôme'
+            column: BAR_SAI_VDI
+        temPntJurVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si points jury possibles pour la version diplôme'
+                default: 'N'
+            column: TEM_PNT_JUR_VDI
+        temMndVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si mention attendue pour la version diplôme'
+                default: 'N'
+            column: TEM_MND_VDI
+        temResVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si résultat attendu pour la version diplôme'
+                default: O
+            column: TEM_RES_VDI
+        temJurVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant existence jury pour la version diplôme'
+                default: O
+            column: TEM_JUR_VDI
+        nbrAdmVdi:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places d"admission'
+            column: NBR_ADM_VDI
+        temSesUni:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin session unique'
+                default: 'N'
+            column: TEM_SES_UNI
+        temAdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admissibilité'
+                default: 'N'
+            column: TEM_ADI
+        temAdo:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admission'
+                default: O
+            column: TEM_ADO
+        lim1Vdi:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 1'
+            column: LIM1_VDI
+        lim2Vdi:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 2'
+            column: LIM2_VDI
+        lim3Vdi:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 3'
+            column: LIM3_VDI
+        nbrMinSpeVdi:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre minimum de spécialités à choisir'
+            column: NBR_MIN_SPE_VDI
+        nbrMaxSpeVdi:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre maximum de spécialités à choisir'
+            column: NBR_MAX_SPE_VDI
+        temResThsVdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin résultat attendu pour une version diplôme de type thèse'
+                default: 'N'
+            column: TEM_RES_THS_VDI
+        durAnnVdi:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Durée en année de la version diplôme'
+            column: DUR_ANN_VDI
+        libWebVdi:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+                comment: 'libellé web'
+            column: LIB_WEB_VDI
+        codCarVdi:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+                comment: 'Code caractère de la version de diplôme'
+            column: COD_CAR_VDI
+        nbrCrdVdi:
+            type: decimal
+            nullable: true
+            precision: 7
+            scale: 2
+            options:
+                comment: 'Nombre de crédits européens'
+            column: NBR_CRD_VDI
+        codRofVdi:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+                comment: 'Code de l''objet ROF correspondant'
+            column: COD_ROF_VDI
+        temOffCom:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Offre de formation COMUE'
+                default: 'N'
+            column: TEM_OFF_COM
+        temOffDeloc:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Formation délocalisée à l''étranger'
+                default: 'N'
+            column: TEM_OFF_DELOC
+        forInm:
+            type: string
+            nullable: true
+            length: 8
+            options:
+                fixed: false
+                comment: 'Identifiant navette de la mention'
+            column: FOR_INM
+        forInmp:
+            type: string
+            nullable: true
+            length: 11
+            options:
+                fixed: false
+                comment: 'Identifiant navette parcours'
+            column: FOR_INMP
+    manyToOne:
+        codCfm:
+            targetEntity: ConfigMention
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CFM:
+                    referencedColumnName: COD_CFM
+            orphanRemoval: false
+        codPer:
+            targetEntity: Personnel
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PER:
+                    referencedColumnName: COD_PER
+            orphanRemoval: false
+        codCur:
+            targetEntity: CursusLmd
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CUR:
+                    referencedColumnName: COD_CUR
+            orphanRemoval: false
+        codSisVdiInt:
+            targetEntity: DiplomeSise
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_SIS_VDI_INT:
+                    referencedColumnName: COD_DIS
+            orphanRemoval: false
+        codSisVdi:
+            targetEntity: DiplomeSise
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_SIS_VDI:
+                    referencedColumnName: COD_DIS
+            orphanRemoval: false
+        codEdoVdi:
+            targetEntity: EcoleDoctorale
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_EDO_VDI:
+                    referencedColumnName: COD_EDO
+            orphanRemoval: false
+        codEtbCom:
+            targetEntity: Etablissement
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ETB_COM:
+                    referencedColumnName: COD_ETB
+            orphanRemoval: false
+        codFiv:
+            targetEntity: FinaliteVdi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_FIV:
+                    referencedColumnName: COD_FIV
+            orphanRemoval: false
+        codMev:
+            targetEntity: MentionVdi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_MEV:
+                    referencedColumnName: COD_MEV
+            orphanRemoval: false
+        codPan1:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_1:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan2:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_2:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan3:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_3:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan4:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_4:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPty:
+            targetEntity: ParcoursType
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PTY:
+                    referencedColumnName: COD_PTY
+            orphanRemoval: false
+        codSvd:
+            targetEntity: SpecialiteVdi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_SVD:
+                    referencedColumnName: COD_SVD
+            orphanRemoval: false
+        codTrePos:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_POS:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNeg:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NEG:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+    oneToOne:
+        codDip:
+            targetEntity: Diplome
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_DIP:
+                    referencedColumnName: COD_DIP
+            orphanRemoval: false
+    manyToMany:
+        codEtp:
+            targetEntity: VersionEtape
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: codDip
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

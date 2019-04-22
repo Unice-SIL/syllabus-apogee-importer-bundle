@@ -1,0 +1,34 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\MentionVdi:
+    type: entity
+    table: MENTION_VDI
+    id:
+        codMev:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: false
+                comment: 'code de la mention'
+            id: true
+            column: COD_MEV
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libMev:
+            type: string
+            nullable: false
+            length: 400
+            options:
+                fixed: false
+                comment: 'libelle de la mention'
+            column: LIB_MEV
+        temEnSveMev:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'temoin de mise en service de la mention'
+                default: O
+            column: TEM_EN_SVE_MEV
+    lifecycleCallbacks: {  }

@@ -1,0 +1,57 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\NatureDiplome:
+    type: entity
+    table: NATURE_DIPLOME
+    id:
+        codNdi:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code Nature Diplome'
+            id: true
+            column: COD_NDI
+            generator:
+                strategy: SEQUENCE
+    fields:
+        codPriNdi:
+            type: boolean
+            nullable: false
+            options:
+                comment: 'Priorite Nature Diplome'
+            column: COD_PRI_NDI
+        libNdi:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Nature Diplome'
+            column: LIB_NDI
+        licNdi:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Nature Diplome'
+            column: LIC_NDI
+        temEnSveNdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin en Service'
+                default: O
+            column: TEM_EN_SVE_NDI
+        temDel:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin d"Autorisation de Mise Hors Service'
+                default: O
+            column: TEM_DEL
+    lifecycleCallbacks: {  }

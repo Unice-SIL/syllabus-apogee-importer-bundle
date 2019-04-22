@@ -1,0 +1,42 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\SectionCnu:
+    type: entity
+    table: SECTION_CNU
+    id:
+        codScc:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Identifiant section CNU'
+            id: true
+            column: COD_SCC
+            generator:
+                strategy: SEQUENCE
+    fields:
+        licScc:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libellé court section CNU'
+            column: LIC_SCC
+        libScc:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                comment: 'Libellé long section CNU'
+            column: LIB_SCC
+        temEnSveScc:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin code en service'
+                default: O
+            column: TEM_EN_SVE_SCC
+    lifecycleCallbacks: {  }

@@ -1,0 +1,184 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\Composante:
+    type: entity
+    table: COMPOSANTE
+    indexes:
+        cmp_fk_tpc_01_frgn:
+            columns:
+                - COD_TPC
+        cmp_fk_cbd_01_frgn:
+            columns:
+                - COD_POS_ADR_CMP
+                - COD_COM_ADR_CMP
+        cmp_fk_sig_01_frgn:
+            columns:
+                - COD_SIG
+    id:
+        codCmp:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+                comment: 'Code Composante'
+            id: true
+            column: COD_CMP
+            generator:
+                strategy: SEQUENCE
+    fields:
+        codRneCmp:
+            type: string
+            nullable: true
+            length: 8
+            options:
+                fixed: false
+                comment: 'Correspondance Code RNE de la Composante'
+            column: COD_RNE_CMP
+        libCmp:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Composante'
+            column: LIB_CMP
+        licCmp:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Composante'
+            column: LIC_CMP
+        libCmtCmp:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                comment: 'Libelle Long (Commentaire) de la Composante'
+            column: LIB_CMT_CMP
+        libAd1Cmp:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Premiere Ligne Adresse'
+            column: LIB_AD1_CMP
+        libAd2Cmp:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Deuxieme Ligne Adresse'
+            column: LIB_AD2_CMP
+        libAd3Cmp:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Troisieme Ligne Adresse'
+            column: LIB_AD3_CMP
+        temCouAccTrvCmp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Couverture du Travail'
+                default: O
+            column: TEM_COU_ACC_TRV_CMP
+        temElcCmp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Composante Electorale'
+                default: O
+            column: TEM_ELC_CMP
+        temEnSveCmp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Code en Service'
+                default: O
+            column: TEM_EN_SVE_CMP
+        codNatCmp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Code Nature de la Composante'
+                default: J
+            column: COD_NAT_CMP
+        lim1Cmp:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 1'
+            column: LIM1_CMP
+        lim2Cmp:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 2'
+            column: LIM2_CMP
+        lim3Cmp:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 3'
+            column: LIM3_CMP
+        temMinCmp:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin affichage minitel'
+                default: CHR(78)
+            column: TEM_MIN_CMP
+        numOrdCmp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Numéro d"ordre affichage minitel'
+            column: NUM_ORD_CMP
+        int1EdiDipCmp:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+                comment: 'Intitulé 1 de la composante pour l''édition de diplome'
+            column: INT_1_EDI_DIP_CMP
+        int2EdiDipCmp:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+                comment: 'Intitulé 2 de la composante pour l''édition de diplome'
+            column: INT_2_EDI_DIP_CMP
+        libWebCmp:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+                comment: 'libellé web'
+            column: LIB_WEB_CMP
+    lifecycleCallbacks: {  }

@@ -1,0 +1,150 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\Diplome:
+    type: entity
+    table: DIPLOME
+    indexes:
+        dip_fk_cyc_01_frgn:
+            columns:
+                - COD_CYC
+        dip_fk_etb_01_frgn:
+            columns:
+                - COD_ETB
+        dip_fk_ndi_01_frgn:
+            columns:
+                - COD_NDI
+        dip_fk_tpd_01_frgn:
+            columns:
+                - COD_TPD_ETB
+        dip_fk_dfd_01_frgn:
+            columns:
+                - COD_DFD
+        dip_fk_nim_01_frgn:
+            columns:
+                - COD_NIM
+        dip_fk_sds_01_frgn:
+            columns:
+                - COD_SDS
+    id:
+        codDip:
+            type: string
+            nullable: false
+            length: 7
+            options:
+                fixed: false
+                comment: 'Code Diplome Etablissement'
+            id: true
+            column: COD_DIP
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libDip:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+                comment: 'Libelle Long Diplome'
+            column: LIB_DIP
+        licDip:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+                comment: 'Libelle Court Diplome'
+            column: LIC_DIP
+        nbrMaxInscDeug:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre Maximum d"Inscriptions en DEUG Autorisé'
+            column: NBR_MAX_INSC_DEUG
+        temCouAccTrvDip:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Couverture Accident Travail'
+                default: O
+            column: TEM_COU_ACC_TRV_DIP
+        temOuvDrtSsoDip:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Ouvre Droit Securite Sociale'
+                default: O
+            column: TEM_OUV_DRT_SSO_DIP
+    manyToOne:
+        codCyc:
+            targetEntity: Cycle
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CYC:
+                    referencedColumnName: COD_CYC
+            orphanRemoval: false
+        codDfd:
+            targetEntity: DomaineFormationDip
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_DFD:
+                    referencedColumnName: COD_DFD
+            orphanRemoval: false
+        codEtb:
+            targetEntity: Etablissement
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ETB:
+                    referencedColumnName: COD_ETB
+            orphanRemoval: false
+        codNdi:
+            targetEntity: NatureDiplome
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_NDI:
+                    referencedColumnName: COD_NDI
+            orphanRemoval: false
+        codNim:
+            targetEntity: NiveauIntermini
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_NIM:
+                    referencedColumnName: COD_NIM
+            orphanRemoval: false
+        codSds:
+            targetEntity: SecDisSis
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_SDS:
+                    referencedColumnName: COD_SDS
+            orphanRemoval: false
+        codTpdEtb:
+            targetEntity: TypDiplome
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TPD_ETB:
+                    referencedColumnName: COD_TPD_ETB
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

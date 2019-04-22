@@ -1,0 +1,549 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
+    type: entity
+    table: VERSION_ETAPE
+    indexes:
+        vet_fk_pan_04_frgn:
+            columns:
+                - COD_PAN_4
+        vet_fk_pan_02_frgn:
+            columns:
+                - COD_PAN_2
+        vet_fk_cmp_01_frgn:
+            columns:
+                - COD_CMP
+        vet_fk_esi_01_frgn:
+            columns:
+                - COD_ESI
+        vet_fk_tre_01_frgn:
+            columns:
+                - COD_TRE_POS
+        vet_fk_cfm_01_frgn:
+            columns:
+                - COD_CFM
+        vet_fk_pty_01_frgn:
+            columns:
+                - COD_PTY
+        vet_fk_pan_03_frgn:
+            columns:
+                - COD_PAN_3
+        vet_fk_due_01_frgn:
+            columns:
+                - COD_DUE
+        vet_fk_tre_02_frgn:
+            columns:
+                - COD_TRE_NEG
+        vet_fk_cge_01_frgn:
+            columns:
+                - COD_CGE_MIN_VET
+        vet_fk_cnv_01_frgn:
+            columns:
+                - COD_CNV
+        vet_fk_aca_01_frgn:
+            columns:
+                - COD_CPG
+        vet_fk_pan_01_frgn:
+            columns:
+                - COD_PAN_1
+        IDX_E63A60BEB716FD1:
+            columns:
+                - COD_ETP
+    id:
+        codVrsVet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Numero Version Etape'
+            id: true
+            column: COD_VRS_VET
+        codEtp:
+            associationKey: true
+    fields:
+        libCmtVet:
+            type: string
+            nullable: true
+            length: 2000
+            options:
+                fixed: false
+                comment: 'Libellé Commentaire Version Etape'
+            column: LIB_CMT_VET
+        nbrVolHorVet:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Volume Horaire Version etape'
+            column: NBR_VOL_HOR_VET
+        temTlsVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Tele-Enseignement'
+                default: O
+            column: TEM_TLS_VET
+        temNotVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si note attendue pour la version étape'
+                default: 'N'
+            column: TEM_NOT_VET
+        barSaiVet:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Dernier barême de saisie et affichage de la version étape'
+            column: BAR_SAI_VET
+        temPntJurVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si points jury possibles  pour la version étape'
+                default: 'N'
+            column: TEM_PNT_JUR_VET
+        temMndVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si mention attendue pour la version étape'
+                default: 'N'
+            column: TEM_MND_VET
+        temResVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si résultat attendu pour la version étape'
+                default: O
+            column: TEM_RES_VET
+        temJurVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant exeistence jury pour la version étape'
+                default: 'N'
+            column: TEM_JUR_VET
+        nbrAdmVet:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places d"admission'
+            column: NBR_ADM_VET
+        temDipVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si l"étape est diplomante'
+                default: 'N'
+            column: TEM_DIP_VET
+        temSesUni:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin session unique'
+                default: 'N'
+            column: TEM_SES_UNI
+        temAdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admissibilité'
+                default: 'N'
+            column: TEM_ADI
+        temAdo:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admission'
+                default: O
+            column: TEM_ADO
+        lim1Vet:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 1'
+            column: LIM1_VET
+        lim2Vet:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 2'
+            column: LIM2_VET
+        lim3Vet:
+            type: string
+            nullable: true
+            length: 35
+            options:
+                fixed: false
+                comment: 'Libellé minitel 3'
+            column: LIM3_VET
+        datDebMinVet:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date début inscription par minitel'
+            column: DAT_DEB_MIN_VET
+        datFinMinVet:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date fin inscription par minitel'
+            column: DAT_FIN_MIN_VET
+        temOpiMinVet:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin OPI obligatoire (minitel)'
+                default: 'N'
+            column: TEM_OPI_MIN_VET
+        libWebVet:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+                comment: 'libellé web'
+            column: LIB_WEB_VET
+        nbrCrdVet:
+            type: decimal
+            nullable: true
+            precision: 7
+            scale: 2
+            options:
+                comment: 'Nombre de crédits européens'
+            column: NBR_CRD_VET
+        codCipAdipVet:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+                comment: 'Code centre inscription pedagogique pour lequel la VET est proposable à distance'
+            column: COD_CIP_ADIP_VET
+        datDebMinpVet:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date d''ouverture d''une VET pour le web primo entrant'
+            column: DAT_DEB_MINP_VET
+        datFinMinpVet:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fermture d''une VET pour le web primo entrant'
+            column: DAT_FIN_MINP_VET
+        temReinsSansDelib:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''autorisation de réinscription à une VET non délibérée'
+                default: 'N'
+            column: TEM_REINS_SANS_DELIB
+        codCgeMinpVet:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+                comment: 'Code CGE servant de temoin AD pour le Web primo entrant'
+            column: COD_CGE_MINP_VET
+        temPmt3fVetWeb:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''autorisation du paiement en 3 fois par le Web'
+                default: 'N'
+            column: TEM_PMT_3F_VET_WEB
+        grpPacesVet:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Regroupement PACES'
+            column: GRP_PACES_VET
+        datDebPacesSim:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date d''ouverture du choix des filières Web en simulation'
+            column: DAT_DEB_PACES_SIM
+        datFinPacesSim:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fermeture du choix des filières Web en simulation'
+            column: DAT_FIN_PACES_SIM
+        datDebPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date d''ouverture du choix des filières Web en réel'
+            column: DAT_DEB_PACES_REE
+        datFinPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fermeture du choix des filières Web en réel'
+            column: DAT_FIN_PACES_REE
+        datDebProvPacesSim:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de début de la période de consultation de l''affectation provisoire de simulation'
+            column: DAT_DEB_PROV_PACES_SIM
+        datFinProvPacesSim:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fin de la période de consultation de l''affectation provisoire de simulation'
+            column: DAT_FIN_PROV_PACES_SIM
+        datDebProvPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de début de la période de consultation de l''affectation provisoire réelle'
+            column: DAT_DEB_PROV_PACES_REE
+        datFinProvPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fin de la période de consultation de l''affectation provisoire réelle'
+            column: DAT_FIN_PROV_PACES_REE
+        datDebDefPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de début de la période de consultation de l''affectation définitive'
+            column: DAT_DEB_DEF_PACES_REE
+        datFinDefPacesRee:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fin de la période de consultation de l''affectation définitive'
+            column: DAT_FIN_DEF_PACES_REE
+        temHebVet:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin version d''étape réservée aux étudiants de statut hébergé'
+                default: 'N'
+            column: TEM_HEB_VET
+        forInmp:
+            type: string
+            nullable: true
+            length: 11
+            options:
+                fixed: false
+                comment: 'Identifiant navette parcours'
+            column: FOR_INMP
+    manyToOne:
+        codCpg:
+            targetEntity: AdipCampagne
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CPG:
+                    referencedColumnName: COD_CPG
+            orphanRemoval: false
+        codCfm:
+            targetEntity: ConfigMention
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CFM:
+                    referencedColumnName: COD_CFM
+            orphanRemoval: false
+        codCgeMinVet:
+            targetEntity: CentreGestion
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CGE_MIN_VET:
+                    referencedColumnName: COD_CGE
+            orphanRemoval: false
+        codCmp:
+            targetEntity: Composante
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CMP:
+                    referencedColumnName: COD_CMP
+            orphanRemoval: false
+        codCnv:
+            targetEntity: Convention
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CNV:
+                    referencedColumnName: COD_CNV
+            orphanRemoval: false
+        codDue:
+            targetEntity: DureeEtape
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_DUE:
+                    referencedColumnName: COD_DUE
+            orphanRemoval: false
+        codEsi:
+            targetEntity: EtapeSis
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ESI:
+                    referencedColumnName: COD_ESI
+            orphanRemoval: false
+        codPan1:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_1:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan2:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_2:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan3:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_3:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan4:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_4:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPty:
+            targetEntity: ParcoursType
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PTY:
+                    referencedColumnName: COD_PTY
+            orphanRemoval: false
+        codTrePos:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_POS:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNeg:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NEG:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+    oneToOne:
+        codEtp:
+            targetEntity: Etape
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ETP:
+                    referencedColumnName: COD_ETP
+            orphanRemoval: false
+    manyToMany:
+        codDip:
+            targetEntity: VersionDiplome
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: codEtp
+            joinTable:
+                name: vdi_fractionner_vet
+                joinColumns:
+                    -
+                        name: COD_ETP
+                        referencedColumnName: COD_ETP
+                    -
+                        name: COD_VRS_VET
+                        referencedColumnName: COD_VRS_VET
+                inverseJoinColumns:
+                    -
+                        name: COD_DIP
+                        referencedColumnName: COD_DIP
+                    -
+                        name: COD_VRS_VDI
+                        referencedColumnName: COD_VRS_VDI
+            orderBy: null
+    lifecycleCallbacks: {  }

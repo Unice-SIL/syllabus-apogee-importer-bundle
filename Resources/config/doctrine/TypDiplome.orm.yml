@@ -1,0 +1,201 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\TypDiplome:
+    type: entity
+    table: TYP_DIPLOME
+    indexes:
+        tpd_fk_tds_02_frgn:
+            columns:
+                - COD_TDS_INT
+        tpd_fk_tds_01_frgn:
+            columns:
+                - COD_TDS
+        tpd_fk_nif_01_frgn:
+            columns:
+                - COD_NIF
+    id:
+        codTpdEtb:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code Type Diplome Etablissement'
+            id: true
+            column: COD_TPD_ETB
+            generator:
+                strategy: SEQUENCE
+    fields:
+        codTpdSis:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code Type Diplome SISE'
+            column: COD_TPD_SIS
+        libTpd:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Type Diplome SISE'
+            column: LIB_TPD
+        licTpd:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Type Diplome SISE'
+            column: LIC_TPD
+        temEnSveTpd:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin en Service'
+                default: O
+            column: TEM_EN_SVE_TPD
+        etaThsHdrDrt:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat du type diplôme pour les 3ème cycle'
+            column: ETA_THS_HDR_DRT
+        temEnqSisTpd:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin mentionnant que ce type de diplôme est utilisé pour enquête SISE'
+                default: chr(78)
+            column: TEM_ENQ_SIS_TPD
+        temNatEur:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Nature européenne du diplôme'
+                default: 'N'
+            column: TEM_NAT_EUR
+        temSante:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin de diplome de santé'
+                default: '(''N'')'
+            column: TEM_SANTE
+        temCrdSis:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin permettant la remontée des crédits dans l''enquête'
+                default: 'N'
+            column: TEM_CRD_SIS
+        aglTemMast:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin (case à cocher) permettant d''identifier les diplômes de Master'
+                default: 'N'
+            column: AGL_TEM_MAST
+        aglCur:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Cursus du type de diplôme'
+            column: AGL_CUR
+        aglForm:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+                comment: 'Codification du type de formation'
+            column: AGL_FORM
+        temPrior:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin priorité diplôme de santé'
+                default: 'N'
+            column: TEM_PRIOR
+        etaIfm:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat du type diplôme pour les IUFM'
+            column: ETA_IFM
+        etaIng:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin indiquant s''il s''agit d''un type de diplôme "école d''ingénieur"'
+                default: 'N'
+            column: ETA_ING
+        temPrexam:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin permettant la remontée de la présence aux examens dans l''enquête SISE 05'
+                default: 'N'
+            column: TEM_PREXAM
+        codEch:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Echelle de priorité dans le calcul de l''étape première.'
+            column: COD_ECH
+    manyToOne:
+        codNif:
+            targetEntity: NiveauFormation
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_NIF:
+                    referencedColumnName: COD_NIF
+            orphanRemoval: false
+        codTds:
+            targetEntity: TypDiplomeSise
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TDS:
+                    referencedColumnName: COD_TDS
+            orphanRemoval: false
+        codTdsInt:
+            targetEntity: TypDiplomeSise
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TDS_INT:
+                    referencedColumnName: COD_TDS
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

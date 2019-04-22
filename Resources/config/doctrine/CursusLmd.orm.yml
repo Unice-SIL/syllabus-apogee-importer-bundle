@@ -1,0 +1,41 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\CursusLmd:
+    type: entity
+    table: CURSUS_LMD
+    id:
+        codCur:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Code Cursus LMD'
+            id: true
+            column: COD_CUR
+            generator:
+                strategy: SEQUENCE
+    fields:
+        numOrdCur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Numéro d''Ordre Cursus LMD'
+            column: NUM_ORD_CUR
+        libCur:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libellé Long cursus LMD'
+            column: LIB_CUR
+        temEnSveCur:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Code En Service'
+                default: O
+            column: TEM_EN_SVE_CUR
+    lifecycleCallbacks: {  }

@@ -1,0 +1,42 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\PeriodeElp:
+    type: entity
+    table: PERIODE_ELP
+    id:
+        codPel:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code Periode d"Enseignement de l"Element Pedagogique'
+            id: true
+            column: COD_PEL
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libPel:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Periode d"Enseignement'
+            column: LIB_PEL
+        licPel:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Periode d"Enseignement'
+            column: LIC_PEL
+        temEnSvePel:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Code en Service'
+                default: O
+            column: TEM_EN_SVE_PEL
+    lifecycleCallbacks: {  }

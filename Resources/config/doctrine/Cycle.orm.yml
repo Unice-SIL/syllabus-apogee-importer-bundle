@@ -1,0 +1,43 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\Cycle:
+    type: entity
+    table: CYCLE
+    id:
+        codCyc:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Code SISE Cycle'
+            id: true
+            column: COD_CYC
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libCyc:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Cycle'
+            column: LIB_CYC
+        temEnSveCyc:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin en Service'
+                default: O
+            column: TEM_EN_SVE_CYC
+        temDel:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin d"Autorisation de Mise Hors Service'
+                default: O
+            column: TEM_DEL
+    lifecycleCallbacks: {  }

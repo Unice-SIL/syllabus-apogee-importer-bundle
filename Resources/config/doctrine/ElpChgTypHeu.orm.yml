@@ -1,0 +1,161 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\ElpChgTypHeu:
+    type: entity
+    table: ELP_CHG_TYP_HEU
+    indexes:
+        ect_fk_elp_01_frgn:
+            columns:
+                - COD_ELP
+        ect_fk_tyh_01_frgn:
+            columns:
+                - COD_TYP_HEU
+        ect_fk_anu_01_frgn:
+            columns:
+                - COD_ANU
+        ect_fk_col_01_frgn:
+            columns:
+                - COD_COLL_TH
+    id:
+        codAnu:
+            associationKey: true
+        codElp:
+            associationKey: true
+        codTypHeu:
+            associationKey: true
+    fields:
+        nbrHeuElp:
+            type: decimal
+            nullable: true
+            precision: 6
+            scale: 2
+            options:
+                comment: 'Nombre d''heures de cours'
+            column: NBR_HEU_ELP
+        nrmElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre d''étudiants par groupe'
+            column: NRM_ELP
+        nbrMinEtuGrpSupp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre d''étudiants minimum nécessaire à l''ouverture d''un groupe supplémentaire'
+            column: NBR_MIN_ETU_GRP_SUPP
+        nbrGrpPrvColl:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes prévisionnel calculé de la collection'
+            column: NBR_GRP_PRV_COLL
+        nbrGrpPrvCal:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes prévisionnels calculé'
+            column: NBR_GRP_PRV_CAL
+        nbrGrpPrvRst:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Reste de la division de l''effectif total par le nombre de groupe'
+            column: NBR_GRP_PRV_RST
+        nbrGrpPrvMoy:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 2
+            options:
+                comment: 'Effectif prévisionnel / Nombre de groupes prévisionnels calculé'
+            column: NBR_GRP_PRV_MOY
+        nbrGrpPrvMod:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes prévisionnels à prendre en compte'
+            column: NBR_GRP_PRV_MOD
+        nbrGrpThColl:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes théoriques calculé de la collection'
+            column: NBR_GRP_TH_COLL
+        nbrGrpThCal:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes théoriques calculé'
+            column: NBR_GRP_TH_CAL
+        nbrGrpThRst:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Reste de la division de l''effectif total par le nombre de groupe'
+            column: NBR_GRP_TH_RST
+        nbrGrpThMoy:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 2
+            options:
+                comment: 'Effectif théorique / Nombre de groupes théoriques calculé'
+            column: NBR_GRP_TH_MOY
+        nbrGrpThMod:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de groupes théoriques à prendre en compte'
+            column: NBR_GRP_TH_MOD
+    oneToOne:
+        codAnu:
+            targetEntity: AnneeUni
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ANU:
+                    referencedColumnName: COD_ANU
+            orphanRemoval: false
+        codElp:
+            targetEntity: ElementPedagogi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_ELP:
+                    referencedColumnName: COD_ELP
+            orphanRemoval: false
+        codTypHeu:
+            targetEntity: TypeHeure
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TYP_HEU:
+                    referencedColumnName: COD_TYP_HEU
+            orphanRemoval: false
+    manyToOne:
+        codCollTh:
+            targetEntity: Collection
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_COLL_TH:
+                    referencedColumnName: COD_COL
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,836 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi:
+    type: entity
+    table: ELEMENT_PEDAGOGI
+    repositoryClass: UniceSIL\SyllabusApogeeImporterBundle\Repository\ElementPedagogiRepository
+    indexes:
+        elp_fk_tre_02_frgn:
+            columns:
+                - COD_TRE_NLC
+        elp_fk_tre_01_frgn:
+            columns:
+                - COD_TRE_PAC
+        elp_fk_tre_04_frgn:
+            columns:
+                - COD_TRE_NEX
+        elp_fk_tre_05_frgn:
+            columns:
+                - COD_TRE_PDE
+        elp_fk_tre_06_frgn:
+            columns:
+                - COD_TRE_NDE
+        elp_fk_pan_01_frgn:
+            columns:
+                - COD_PAN_1
+        elp_fk_pan_02_frgn:
+            columns:
+                - COD_PAN_2
+        elp_fk_pan_03_frgn:
+            columns:
+                - COD_PAN_3
+        elp_fk_pan_04_frgn:
+            columns:
+                - COD_PAN_4
+        elp_fk_cfm_01_frgn:
+            columns:
+                - COD_CFM
+        elp_fk_cmp_01_frgn:
+            columns:
+                - COD_CMP
+        elp_fk_nel_01_frgn:
+            columns:
+                - COD_NEL
+        elp_fk_pel_01_frgn:
+            columns:
+                - COD_PEL
+        elp_fk_scc_01_frgn:
+            columns:
+                - COD_SCC
+        elp_fk_tre_07_frgn:
+            columns:
+                - COD_TRE_NDL
+        elp_fk_tre_03_frgn:
+            columns:
+                - COD_TRE_NAJ
+    id:
+        codElp:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+                comment: 'Code Element Pedagogique'
+            id: true
+            column: COD_ELP
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libElp:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+                comment: 'Libelle Long de l"Element Pedagogique'
+            column: LIB_ELP
+        licElp:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+                comment: 'Libelle Court de l"Element Pedagogique'
+            column: LIC_ELP
+        libCmtElp:
+            type: string
+            nullable: true
+            length: 2000
+            options:
+                fixed: false
+                comment: 'Libelle Commentaire de l"Element Pedagogique'
+            column: LIB_CMT_ELP
+        datCreElp:
+            type: date
+            nullable: false
+            options:
+                comment: 'Date de Creation de l"Element Pedagogique'
+            column: DAT_CRE_ELP
+        datModElp:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de Modification de l"Element Pedagogique'
+            column: DAT_MOD_ELP
+        nbrVolElp:
+            type: decimal
+            nullable: true
+            precision: 6
+            scale: 2
+            options:
+                comment: 'Volume de l"Element Pedagogique'
+            column: NBR_VOL_ELP
+        codVolElp:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+                comment: 'Code Unite du Volume de l"Element Pedagogique'
+            column: COD_VOL_ELP
+        etaElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat Caracterisant la Disponibilite et la Visibilite de l"Element'
+                default: O
+            column: ETA_ELP
+        libLieElp:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle du Lieu ou se Deroule l"Enseignement'
+            column: LIB_LIE_ELP
+        libNomRspElp:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                comment: 'Nom du Responsable de l"Element Pedagogique'
+            column: LIB_NOM_RSP_ELP
+        datDebOpeIpe:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de début des opérations d"inscription pédagogique'
+            column: DAT_DEB_OPE_IPE
+        datFinOpeIpe:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de fin des opérations d"inscription pédagogique'
+            column: DAT_FIN_OPE_IPE
+        nbrAdmElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de Places d"Admission'
+            column: NBR_ADM_ELP
+        nbrAdmFra:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places d"admission pour les francais'
+            column: NBR_ADM_FRA
+        nbrAdmEtr:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places d"admission pour les etrangers'
+            column: NBR_ADM_ETR
+        notObtElpNum:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Numerateur de le Note d"Obtention de l"Element Pedagogique'
+            column: NOT_OBT_ELP_NUM
+        notObtElpDen:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Denominateur de la Note d"Obtention de l"Element Pedagogique'
+            column: NOT_OBT_ELP_DEN
+        notMinRptElpNum:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Numerateur de la Note Minimale de Report de l"Element'
+            column: NOT_MIN_RPT_ELP_NUM
+        notMinRptElpDen:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Denominateur de la Note Minimale de Report de l"Element'
+            column: NOT_MIN_RPT_ELP_DEN
+        notMinAdmNum:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Numerateur de la Note Minimale d"Admissibilite de l"Element'
+            column: NOT_MIN_ADM_NUM
+        notMinAdmDen:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Denominateur de la Note Minimale d"Admissibilite de l"Element'
+            column: NOT_MIN_ADM_DEN
+        notMaxAdmNum:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Numerateur de la Note Maximale d"Admissibilite de l"Element'
+            column: NOT_MAX_ADM_NUM
+        notMaxAdmDen:
+            type: decimal
+            nullable: true
+            precision: 5
+            scale: 2
+            options:
+                comment: 'Denominateur de la Note Maximale d"Admissibilite de l"Element'
+            column: NOT_MAX_ADM_DEN
+        temElpCap:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin Element Capitalisable'
+                default: O
+            column: TEM_ELP_CAP
+        temReiIpeAcq:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin IP Possible sur Element Deja Acquis'
+                default: O
+            column: TEM_REI_IPE_ACQ
+        temSusElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Precisant si l"Element est Suspendu a Titre Temporaire'
+                default: O
+            column: TEM_SUS_ELP
+        libSusElp:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                comment: 'Commentaire de la Suspension'
+            column: LIB_SUS_ELP
+        temRelPosSyt:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Report Possible 2nde Session de Note Obtenue a Element'
+                default: 'N'
+            column: TEM_REL_POS_SYT
+        temScaElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Precisant si l"Element est Secable'
+                default: O
+            column: TEM_SCA_ELP
+        temElpPrmNiv:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Precisant si l"Element ne Depend d"aucun Element en amont'
+                default: O
+            column: TEM_ELP_PRM_NIV
+        temNotElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si une note est attendue pour l"élément'
+                default: O
+            column: TEM_NOT_ELP
+        barSaiElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Dernier barême de saisie et d"affichage de l"élément'
+            column: BAR_SAI_ELP
+        temPntJurElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si points de jury possibles sur l"élément'
+                default: 'N'
+            column: TEM_PNT_JUR_ELP
+        temMndElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si mention attendue pour l"élément'
+                default: 'N'
+            column: TEM_MND_ELP
+        temResElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si résultat attendu pour l"élément'
+                default: 'N'
+            column: TEM_RES_ELP
+        temJurElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin indiquant l"existence d"un jury pour l"élément'
+                default: 'N'
+            column: TEM_JUR_ELP
+        temCtlValCadElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin modalités contrôle validées par conseil adm pour l"élément'
+                default: 'N'
+            column: TEM_CTL_VAL_CAD_ELP
+        temAnlRptElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si possibilité renoncer au report de  l"élément'
+                default: 'N'
+            column: TEM_ANL_RPT_ELP
+        notMinRptElp:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 3
+            options:
+                comment: 'Note minimale de report de l"élément'
+            column: NOT_MIN_RPT_ELP
+        barMinRptElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Barême de la note de report de l"élément'
+                default: '20'
+            column: BAR_MIN_RPT_ELP
+        temConElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si résultat de l"élément conservé'
+                default: 'N'
+            column: TEM_CON_ELP
+        durConElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Durée de conservation de  l"élément conservable'
+            column: DUR_CON_ELP
+        notMinConElp:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 3
+            options:
+                comment: 'Note minimale à obtenir pour bénéficier de la conservation'
+            column: NOT_MIN_CON_ELP
+        barMinConElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Barême note minimale à obtenir pour bénéficier de la conservation'
+                default: '20'
+            column: BAR_MIN_CON_ELP
+        temCapElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si élément capitalisable ou conservé'
+                default: 'N'
+            column: TEM_CAP_ELP
+        temSesUni:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin session unique'
+                default: 'N'
+            column: TEM_SES_UNI
+        temAdi:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admissibilité'
+                default: 'N'
+            column: TEM_ADI
+        temAdo:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin admission'
+                default: O
+            column: TEM_ADO
+        temHeuEnsElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin gestion des heures d"enseignement de l"élément'
+                default: 'N'
+            column: TEM_HEU_ENS_ELP
+        nbrEffPrvElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Effectif prévisionnel de l"élément'
+            column: NBR_EFF_PRV_ELP
+        nbrHeuCmElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre d"heures de cours magistraux'
+            column: NBR_HEU_CM_ELP
+        nbrHeuTdElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre d"heures de travaux dirigés'
+            column: NBR_HEU_TD_ELP
+        nbrHeuTpElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre d"heures de travaux pratiques'
+            column: NBR_HEU_TP_ELP
+        temMccElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin élément participant aux modalités de contrôle'
+                default: 'N'
+            column: TEM_MCC_ELP
+        temRptDscElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin prise en compte report en bloc des notes résultats des élém. reportables de la descendance élém. concerné'
+                default: 'N'
+            column: TEM_RPT_DSC_ELP
+        numPreElp:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Numéro de présentation de l''élément pédagogique'
+            column: NUM_PRE_ELP
+        nbrCrdElp:
+            type: decimal
+            nullable: true
+            precision: 7
+            scale: 2
+            options:
+                comment: 'Nombre de crédits européens'
+            column: NBR_CRD_ELP
+        temADisElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin indiquant que l''élément est dispensé à distance'
+                default: 'N'
+            column: TEM_A_DIS_ELP
+        capMaxElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Capacité Max de l''élément Pédagogique'
+            column: CAP_MAX_ELP
+        capIntElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Capacité Intermédiaire de l''élément pédagogique'
+            column: CAP_INT_ELP
+        temMeiNotElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin de meilleure note'
+                default: 'N'
+            column: TEM_MEI_NOT_ELP
+        temAjsElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin précisant si possibilité de saisie d''ajustement de masse'
+                default: 'N'
+            column: TEM_AJS_ELP
+        temStgElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin indiquant si l''élément pédagogique est de type Stage'
+                default: 'N'
+            column: TEM_STG_ELP
+        caractElp:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Caractéristique de l''élément : S (filière simulation) ou R (filière réelle) ou C(concours)'
+            column: CARACT_ELP
+        nbrRngUtile:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places en rangs utiles'
+            column: NBR_RNG_UTILE
+        nbrListCompl:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places en liste complémentaire'
+            column: NBR_LIST_COMPL
+        nbrMaxHorsEee:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places maximum hors EEE'
+            column: NBR_MAX_HORS_EEE
+        nbrMaxEssa:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Nombre de places maximum ESSA'
+            column: NBR_MAX_ESSA
+        notMinLcElp:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 3
+            options:
+                comment: 'Note minimale nécessaire pour le résultat liste complémentaire'
+            column: NOT_MIN_LC_ELP
+        barMinLcElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Barème de la note minimale nécessaire au résultat liste complémentaire'
+                default: '20'
+            column: BAR_MIN_LC_ELP
+        codRofElp:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+                comment: 'Code de l''objet ROF correspondant'
+            column: COD_ROF_ELP
+        notMinMeiNotElp:
+            type: decimal
+            nullable: true
+            precision: 8
+            scale: 3
+            options:
+                comment: 'Note minimale de la meilleure note'
+                default: '0'
+            column: NOT_MIN_MEI_NOT_ELP
+        barMinMeiNotElp:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Barème note minimale de la meilleure note'
+                default: '20'
+            column: BAR_MIN_MEI_NOT_ELP
+        temHorsEtab:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin indiquant que l''élément est géré hors établissement'
+                default: 'N'
+            column: TEM_HORS_ETAB
+        seuilOuv:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Seuil d''ouverture de l''enseignement (en nombre d''étudiants)'
+            column: SEUIL_OUV
+        temComElp:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin indiquant si l''élément possède plusieurs ascendants'
+                default: 'N'
+            column: TEM_COM_ELP
+        datModCom:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date de mise à jour du témoin TEM_COM_ELP'
+            column: DAT_MOD_COM
+    manyToOne:
+        codCmp:
+            targetEntity: Composante
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CMP:
+                    referencedColumnName: COD_CMP
+            orphanRemoval: false
+        codNel:
+            targetEntity: NatureElp
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_NEL:
+                    referencedColumnName: COD_NEL
+            orphanRemoval: false
+        codPan1:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_1:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan2:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_2:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan3:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_3:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPan4:
+            targetEntity: PeriodeAno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PAN_4:
+                    referencedColumnName: COD_PAN
+            orphanRemoval: false
+        codPel:
+            targetEntity: PeriodeElp
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_PEL:
+                    referencedColumnName: COD_PEL
+            orphanRemoval: false
+        codScc:
+            targetEntity: SectionCnu
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_SCC:
+                    referencedColumnName: COD_SCC
+            orphanRemoval: false
+        codTrePac:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_PAC:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNlc:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NLC:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNaj:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NAJ:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNex:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NEX:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTrePde:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_PDE:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNde:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NDE:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+        codTreNdl:
+            targetEntity: TypResultat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_TRE_NDL:
+                    referencedColumnName: COD_TRE
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

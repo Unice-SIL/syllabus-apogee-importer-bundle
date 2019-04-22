@@ -1,0 +1,122 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\TypResultat:
+    type: entity
+    table: TYP_RESULTAT
+    id:
+        codTre:
+            type: string
+            nullable: false
+            length: 4
+            options:
+                fixed: false
+                comment: 'Code identifiant un resultat qualitatif'
+            id: true
+            column: COD_TRE
+            generator:
+                strategy: SEQUENCE
+    fields:
+        libTre:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle long d"un un resultat qualitatif'
+            column: LIB_TRE
+        licTre:
+            type: string
+            nullable: false
+            length: 15
+            options:
+                fixed: false
+                comment: 'Libelle court d"un resultat qualitatif'
+            column: LIC_TRE
+        temAdiTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin que ce type concerne un resultat d"admissibilite'
+                default: 'N'
+            column: TEM_ADI_TRE
+        temAdoTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin que ce type concerne un resultat d"admission'
+                default: 'N'
+            column: TEM_ADO_TRE
+        temVdiTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant que ce type concerne un resultat version de diplome'
+                default: 'N'
+            column: TEM_VDI_TRE
+        temVetTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant que ce type concerne un resultat version d"etape'
+                default: 'N'
+            column: TEM_VET_TRE
+        temElpTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant que ce type concerne un resultat element pedagogique'
+                default: 'N'
+            column: TEM_ELP_TRE
+        temEprTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin precisant que ce type concerne un resultat epreuve'
+                default: 'N'
+            column: TEM_EPR_TRE
+        codSisDipTre:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Type de resultat associe a la version de diplome transmis a SISE'
+            column: COD_SIS_DIP_TRE
+        codNegTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Code precisant type de resultat est resultat negatif ou positif'
+                default: '1'
+            column: COD_NEG_TRE
+        temEnSveTre:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin en service'
+                default: O
+            column: TEM_EN_SVE_TRE
+        temDel:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin d"autorisation de mise hors service'
+                default: O
+            column: TEM_DEL
+    lifecycleCallbacks: {  }

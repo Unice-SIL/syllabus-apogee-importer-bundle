@@ -1,0 +1,57 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\TypeHeure:
+    type: entity
+    table: TYPE_HEURE
+    id:
+        codTypHeu:
+            type: string
+            nullable: false
+            length: 6
+            options:
+                fixed: false
+                comment: 'Code Type d''heure'
+            id: true
+            column: COD_TYP_HEU
+            generator:
+                strategy: SEQUENCE
+    fields:
+        licTypHeu:
+            type: string
+            nullable: false
+            length: 6
+            options:
+                fixed: false
+                comment: 'Libellé court du type d''heure'
+            column: LIC_TYP_HEU
+        libTypHeu:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libellé long du type d''heure'
+            column: LIB_TYP_HEU
+        coeffHetd:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: false
+                comment: 'Coefficient HETD'
+            column: COEFF_HETD
+        numOrdTypHeu:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Numéro d''ordre du type d''heure'
+            column: NUM_ORD_TYP_HEU
+        temEnSveTypHeu:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin en service du type d''heure'
+                default: O
+            column: TEM_EN_SVE_TYP_HEU
+    lifecycleCallbacks: {  }

@@ -1,0 +1,298 @@
+UniceSIL\SyllabusApogeeImporterBundle\Entity\CentreGestion:
+    type: entity
+    table: CENTRE_GESTION
+    indexes:
+        cge_fk_cpa_01_frgn:
+            columns:
+                - COD_CPA
+        cge_fk_cbd_01_frgn:
+            columns:
+                - COD_POS_ADR_CGE
+                - COD_COM_ADR_CGE
+    id:
+        codCge:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+                comment: 'Code Centre de Gestion'
+            id: true
+            column: COD_CGE
+            generator:
+                strategy: SEQUENCE
+    fields:
+        etaTypEdtCrtCge:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Etat Type Edition Carte Etudiant'
+                default: I
+            column: ETA_TYP_EDT_CRT_CGE
+        modEdtCrt:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin affichage fenêtre édition carte'
+                default: D
+            column: MOD_EDT_CRT
+        libCge:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+                comment: 'Libelle Long Centre de Gestion'
+            column: LIB_CGE
+        licCge:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+                comment: 'Libelle Court Centre de Gestion'
+            column: LIC_CGE
+        libNomRespCge:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+                comment: 'Nom du responsable du centre de gestion'
+            column: LIB_NOM_RESP_CGE
+        libCmtCge:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                comment: 'Libelle Long (Commentaire) Centre de Gestion'
+            column: LIB_CMT_CGE
+        numChrQutCge:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Numero Chronologique de Quittance (unique par CGE)'
+            column: NUM_CHR_QUT_CGE
+        numOccQutEdt:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Dernier Code  Quittance Editee dans Liste Controle Titres Pmt'
+            column: NUM_OCC_QUT_EDT
+        numOccQutEdtVdr:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier Code  Quittance Edite dans la Ventilation des Droits'
+                default: '0'
+            column: NUM_OCC_QUT_EDT_VDR
+        numOccQutEdtLch:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Dernier Code  Quittance Edite dans la Liste Controle de Remise de Cheque'
+                default: '0'
+            column: NUM_OCC_QUT_EDT_LCH
+        numOccQutVal:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Dernier Code  Quittance Validee dans Liste Controle Titres Pmt'
+            column: NUM_OCC_QUT_VAL
+        numOccPrmQutVal:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Premier Code Quittance à Traiter pour l"Edition Ventilation Droits'
+                default: '0'
+            column: NUM_OCC_PRM_QUT_VAL
+        datDebInsCge:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date Debut d"Inscription'
+            column: DAT_DEB_INS_CGE
+        datFinInsCge:
+            type: date
+            nullable: true
+            options:
+                comment: 'Date Fin d"Inscription'
+            column: DAT_FIN_INS_CGE
+        nbrEtuCpt:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Capacite d"Accueil pour IAA (en nombre d"etudiants par heure)'
+            column: NBR_ETU_CPT
+        libAd1Cge:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Premiere Ligne de l"Adresse'
+            column: LIB_AD1_CGE
+        libAd2Cge:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Deuxieme Ligne Adresse'
+            column: LIB_AD2_CGE
+        libAd3Cge:
+            type: string
+            nullable: true
+            length: 32
+            options:
+                fixed: false
+                comment: 'Troisieme Ligne Adresse'
+            column: LIB_AD3_CGE
+        temEnSveCge:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Temoin Code en Service'
+                default: O
+            column: TEM_EN_SVE_CGE
+        temPaiMemePos:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin paiement sur le même poste'
+                default: O
+            column: TEM_PAI_MEME_POS
+        temCtrlPai:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin contrôle sur le paiement'
+                default: 'N'
+            column: TEM_CTRL_PAI
+        temMinCge:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin de gestion des inscriptions télématiques'
+                default: 'N'
+            column: TEM_MIN_CGE
+        codModPaiMinCge:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: false
+                comment: 'Code du mode de paiement télématique'
+                default: '2'
+            column: COD_MOD_PAI_MIN_CGE
+        libCmtPcjMinCge:
+            type: string
+            nullable: true
+            length: 4000
+            options:
+                fixed: false
+                comment: 'Description du mode de communication des PJ pour IA-Réins'
+            column: LIB_CMT_PCJ_MIN_CGE
+        temCtrlRmb:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin de contrôle sur les remboursements'
+                default: chr(78)
+            column: TEM_CTRL_RMB
+        nbrMaxInsAut:
+            type: boolean
+            nullable: true
+            options:
+                comment: 'Nombre maximum d''inscriptions autorisées'
+            column: NBR_MAX_INS_AUT
+        codModPaiMinpCge:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''autorisation de réinscription à une VET non délibérée'
+                default: '2'
+            column: COD_MOD_PAI_MINP_CGE
+        temPmt3fCgeWeb:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''autorisation du paiement en 3 fois par le Web'
+                default: 'N'
+            column: TEM_PMT_3F_CGE_WEB
+        libCmtPcjMinpCge:
+            type: string
+            nullable: true
+            length: 4000
+            options:
+                fixed: false
+                comment: 'Description du mode de communication des PJ pour IA-Primo'
+            column: LIB_CMT_PCJ_MINP_CGE
+        temMinDematCge:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''activation/désactivation de la dématérialisation des PJ pour IA-Réins'
+                default: 'N'
+            column: TEM_MIN_DEMAT_CGE
+        temMinpDematCge:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: false
+                comment: 'Témoin d''activation/désactivation de la dématérialisation des PJ pour IA-Primo'
+                default: 'N'
+            column: TEM_MINP_DEMAT_CGE
+    manyToOne:
+        codPosAdrCge:
+            targetEntity: ComBdi
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_POS_ADR_CGE:
+                    referencedColumnName: COD_BDI
+                COD_COM_ADR_CGE:
+                    referencedColumnName: COD_COM
+            orphanRemoval: false
+        codCpa:
+            targetEntity: Cpam
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                COD_CPA:
+                    referencedColumnName: COD_CPA
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
