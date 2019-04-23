@@ -35,9 +35,11 @@ class CourseAdapter implements CourseInterface
 
     /**
      * @param CourseCollection $parents
+     * @return $this
      */
     public function setParents(CourseCollection $parents){
-
+        $this->parents = $parents;
+        return $this;
     }
 
     /**
