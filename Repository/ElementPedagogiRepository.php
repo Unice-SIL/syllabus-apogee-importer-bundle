@@ -31,7 +31,7 @@ class ElementPedagogiRepository extends EntityRepository
      * @param string $codlElp
      * @return mixed
      */
-    public function findParents(string $codlElp){
+    public function findParents(string $codlElp, array $natures){
         $qb = $this->createQueryBuilder('elp');
         $qb
             ->innerJoin('UniceSILSyllabusApogeeImporterBundle:ElpRegroupeElp', 'ere', 'WITH', 'ere.codElpPere = elp.codElp')
@@ -42,13 +42,15 @@ class ElementPedagogiRepository extends EntityRepository
             ->andWhere($qb->expr()->not($qb->expr()->eq('ere.temSusElpPere', ':temSusElpPere')))
             ->andWhere($qb->expr()->eq('elp.etaElp', ':etaElp'))
             ->andWhere($qb->expr()->eq('elp.temSusElp', ':temSusElp'))
+            ->andWhere($qb->expr()->in('elp.codNel', ':natures'))
             ->setParameter('codElpFils', $codlElp)
             ->setParameter('etaElpFils', 'O')
             ->setParameter('etaElpPere', 'O')
             ->setParameter('temSusElpFils', 'O')
             ->setParameter('temSusElpPere', 'O')
             ->setParameter('etaElp', 'O')
-            ->setParameter('temSusElp', 'N');
+            ->setParameter('temSusElp', 'N')
+            ->setParameter('natures', $natures);
         return $qb->getQuery()->getResult();
     }
 }

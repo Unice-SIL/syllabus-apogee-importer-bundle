@@ -45,7 +45,7 @@ class CourseImporter implements CourseImporterInterface
         $courses = new CourseCollection();
         foreach ($em->getRepository(ElementPedagogi::class)->findLeafByNatures($this->config['course']['types']) as $elp){
             $courseParents = new CourseCollection();
-            foreach ($em->getRepository(ElementPedagogi::class)->findParents($elp->getCodElp()) as $elpParent){
+            foreach ($em->getRepository(ElementPedagogi::class)->findParents($elp->getCodElp(), $this->config['course']['types']) as $elpParent){
                 $courseParent = new CourseAdapter($elpParent);
                 $courseParents->append($courseParent);
             }
