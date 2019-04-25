@@ -147,15 +147,4 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\ElpChgTypHeu:
                 COD_TYP_HEU:
                     referencedColumnName: COD_TYP_HEU
             orphanRemoval: false
-    manyToOne:
-        codCollTh:
-            targetEntity: Collection
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_COLL_TH:
-                    referencedColumnName: COD_COL
-            orphanRemoval: false
     lifecycleCallbacks: {  }

@@ -6,6 +6,7 @@ namespace UniceSIL\SyllabusApogeeImporterBundle\Importer;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use UniceSIL\SyllabusApogeeImporterBundle\Adapter\CourseAdapter;
 use UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi;
+use UniceSIL\SyllabusApogeeImporterBundle\Entity\ElpChgTypHeu;
 use UniceSIL\SyllabusImporterToolkit\Course\CourseCollection;
 use UniceSIL\SyllabusImporterToolkit\Course\CourseImporterInterface;
 
@@ -26,6 +27,16 @@ class CourseImporter implements CourseImporterInterface
     private $doctrine;
 
     /**
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
+    private $em;
+
+    /**
+     * @var string
+     */
+    private $year;
+
+    /**
      * CourseImporter constructor.
      * @param array $config
      * @param RegistryInterface $doctrine
@@ -34,6 +45,19 @@ class CourseImporter implements CourseImporterInterface
     {
         $this->config = $config;
         $this->doctrine = $doctrine;
+        $this->em = $this->doctrine->getManager($this->config['em']);
+    }
+
+
+    /**
+     * Set an year could be used to get courses information
+     * @param string $year
+     * @return mixed
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+        return $this;
     }
 
     /**
@@ -41,18 +65,55 @@ class CourseImporter implements CourseImporterInterface
      */
     public function execute(): CourseCollection
     {
-        $em = $this->doctrine->getManager($this->config['em']);
+        // Init course collection
         $courses = new CourseCollection();
-        foreach ($em->getRepository(ElementPedagogi::class)->findLeafByNatures($this->config['course']['types']) as $elp){
+        // Get elements pedagogiques by type
+        foreach ($this->em->getRepository(ElementPedagogi::class)->findLeafByNatures($this->config['course']['types']) as $elp){
+            // Adapt element pedagogique
+            $course = $this->elpToCourse($elp);
+            // Get elements pedagogiques parents
             $courseParents = new CourseCollection();
-            foreach ($em->getRepository(ElementPedagogi::class)->findParents($elp->getCodElp(), $this->config['course']['types']) as $elpParent){
-                $courseParent = new CourseAdapter($elpParent);
+            foreach ($this->em->getRepository(ElementPedagogi::class)->findParents($course->getEtbId(), $this->config['course']['types']) as $elpParent){
+                $courseParent = $this->elpToCourse($elpParent);
                 $courseParents->append($courseParent);
             }
-            $course = new CourseAdapter($elp);
+            // Set courses parents in course
             $course->setParents($courseParents);
+            // Add course to collection
             $courses->append($course);
         }
         return $courses;
     }
+
+    /**
+     * @param ElementPedagogi $elp
+     * @return CourseAdapter
+     */
+    private function elpToCourse(ElementPedagogi $elp): CourseAdapter
+    {
+        $course = new CourseAdapter($elp);
+        $course->setYearId($this->year);
+        if(!is_null($course->getYearId())){
+            // Get charge elp
+            $charges = $this->em->getRepository(ElpChgTypHeu::class)->findBy([
+                'codElp' => $course->getEtbId(),
+                'codAnu' => $course->getYearId()
+            ]);
+            foreach ($charges as $charge){
+                switch ($charge->getCodTypHeu()->getCodTypHeu()){
+                    case 'CM':
+                        $course->setTeachingCmClass($charge->getNbrHeuElp());
+                        break;
+                    case 'TD':
+                        $course->setTeachingTdClass($charge->getNbrHeuElp());
+                        break;
+                    case 'TP':
+                        $course->setTeachingTpClass($charge->getNbrHeuElp());
+                        break;
+                }
+            }
+        }
+        return $course;
+    }
+
 }

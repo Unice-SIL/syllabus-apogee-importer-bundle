@@ -16,8 +16,7 @@ class TestController extends Controller
      * @Route("/test", name="test")
      */
     public function testAction(){
-        $courses = $this->get('unicesil.syllabus_apogee_importer.course')->execute();
-        dump($courses);
+        $courses = $this->get('unicesil.syllabus_apogee_importer.course')->setYear('2018')->execute();
         return new Response("");
     }
 }
