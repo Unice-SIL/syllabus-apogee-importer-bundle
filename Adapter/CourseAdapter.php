@@ -78,8 +78,8 @@ class CourseAdapter implements CourseInterface
     public function __construct(ElementPedagogi $elp)
     {
         $this->etbId = $elp->getCodElp();
-        $this->type = $elp->getCodNel();
-        $this->structureId = $elp->getCodCmp();
+        $this->type = $elp->getCodNel()->getCodNel();
+        $this->structureId = $elp->getCodCmp()->getCodCmp();
         $this->title = $elp->getLibElp();
         $this->ects = $elp->getNbrCrdElp();
         $this->parents = new CourseCollection();
