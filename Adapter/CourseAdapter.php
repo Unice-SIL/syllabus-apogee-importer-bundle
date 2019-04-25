@@ -200,7 +200,7 @@ class CourseAdapter implements CourseInterface
     }
 
     /**
-     * @return float|null
+     * @return int|null
      */
     public function getEcts(): ?int
     {
@@ -208,7 +208,7 @@ class CourseAdapter implements CourseInterface
     }
 
     /**
-     * @param float|null $ects
+     * @param int|null $ects
      * @return CourseAdapter
      */
     public function setEcts($ects)
@@ -278,7 +278,7 @@ class CourseAdapter implements CourseInterface
     /**
      * @return float|null
      */
-    public function getTeachingTdClass(): float
+    public function getTeachingTdClass(): ?float
     {
         return $this->teachingTdClass;
     }
