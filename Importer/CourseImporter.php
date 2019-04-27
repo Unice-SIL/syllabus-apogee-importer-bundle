@@ -88,7 +88,6 @@ class CourseImporter implements CourseImporterInterface
             // Add course to collection
             $courses->append($course);
         }
-        dump($courses->offsetGet(0));
         return $courses;
     }
 
