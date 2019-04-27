@@ -76,10 +76,10 @@ class CourseInfoAdapter implements CourseInfoInterface
     }
 
     /**
-     * @param null|string $yearId
+     * @param string $yearId
      * @return CourseInfoAdapter
      */
-    public function setYearId($yearId)
+    public function setYearId(string $yearId)
     {
         $this->yearId = $yearId;
 
@@ -138,6 +138,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setEcts($ects)
     {
+        if(!is_int($ects)) $ects = null;
         $this->ects = $ects;
 
         return $this;
@@ -157,6 +158,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setDomain($domain)
     {
+        if(!is_string($domain)) $domain = null;
         $this->domain = $domain;
 
         return $this;
@@ -176,6 +178,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setPeriod($period)
     {
+        if(!is_string($period)) $period = null;
         $this->period = $period;
 
         return $this;
@@ -195,6 +198,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingCmClass($teachingCmClass)
     {
+        if(!is_float($teachingCmClass)) $teachingCmClass = null;
         $this->teachingCmClass = $teachingCmClass;
 
         return $this;
@@ -214,6 +218,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingTdClass($teachingTdClass)
     {
+        if(!is_float($teachingTdClass)) $teachingTdClass = null;
         $this->teachingTdClass = $teachingTdClass;
 
         return $this;
@@ -233,6 +238,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingTpClass($teachingTpClass)
     {
+        if(!is_float($teachingTpClass)) $teachingTpClass = null;
         $this->teachingTpClass = $teachingTpClass;
 
         return $this;

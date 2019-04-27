@@ -99,27 +99,33 @@ class CourseImporter implements CourseImporterInterface
     {
         $courseInfos = new CourseInfoCollection();
         foreach ($this->years as $year){
-            $courseInfo = new CourseInfoAdapter($elp);
-            $courseInfo->setYearId($year);
-            // Get charge elp
-            $charges = $this->em->getRepository(ElpChgTypHeu::class)->findBy([
-                'codElp' => $elp->getCodElp(),
-                'codAnu' => $year
-            ]);
-            foreach ($charges as $charge){
-                switch ($charge->getCodTypHeu()->getCodTypHeu()){
-                    case 'CM':
-                        $courseInfo->setTeachingCmClass($charge->getNbrHeuElp());
-                        break;
-                    case 'TD':
-                        $courseInfo->setTeachingTdClass($charge->getNbrHeuElp());
-                        break;
-                    case 'TP':
-                        $courseInfo->setTeachingTpClass($charge->getNbrHeuElp());
-                        break;
+            try {
+                $courseInfo = new CourseInfoAdapter($elp);
+                $courseInfo->setYearId($year);
+                // Get charge elp
+                $charges = $this->em->getRepository(ElpChgTypHeu::class)->findBy(
+                    [
+                        'codElp' => $elp->getCodElp(),
+                        'codAnu' => $year
+                    ]
+                );
+                foreach ($charges as $charge) {
+                    switch ($charge->getCodTypHeu()->getCodTypHeu()) {
+                        case 'CM':
+                            $courseInfo->setTeachingCmClass($charge->getNbrHeuElp());
+                            break;
+                        case 'TD':
+                            $courseInfo->setTeachingTdClass($charge->getNbrHeuElp());
+                            break;
+                        case 'TP':
+                            $courseInfo->setTeachingTpClass($charge->getNbrHeuElp());
+                            break;
+                    }
                 }
+                $courseInfos->append($courseInfo);
+            }catch (\Exception $e){
+                throw $e;
             }
-            $courseInfos->append($courseInfo);
         }
         return $courseInfos;
     }
