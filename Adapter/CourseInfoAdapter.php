@@ -199,7 +199,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingCmClass($teachingCmClass)
     {
-        if(!is_float($teachingCmClass)) $teachingCmClass = null;
+        if(is_null($teachingCmClass)) $teachingCmClass = null;
+        if(!is_float($teachingCmClass)) $teachingCmClass = floatval($teachingCmClass);
         $this->teachingCmClass = $teachingCmClass;
 
         return $this;
@@ -219,7 +220,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingTdClass($teachingTdClass)
     {
-        if(!is_float($teachingTdClass)) $teachingTdClass = null;
+        if(is_null($teachingTdClass)) $teachingTdClass = null;
+        if(!is_float($teachingTdClass)) $teachingTdClass = floatval($teachingTdClass);
         $this->teachingTdClass = $teachingTdClass;
 
         return $this;
@@ -239,7 +241,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setTeachingTpClass($teachingTpClass)
     {
-        if(!is_float($teachingTpClass)) $teachingTpClass = null;
+        if(is_null($teachingTpClass)) $teachingTpClass = null;
+        if(!is_float($teachingTpClass)) $teachingTpClass = floatval($teachingTpClass);
         $this->teachingTpClass = $teachingTpClass;
 
         return $this;
