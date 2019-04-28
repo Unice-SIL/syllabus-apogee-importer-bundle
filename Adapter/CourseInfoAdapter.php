@@ -4,6 +4,7 @@ namespace UniceSIL\SyllabusApogeeImporterBundle\Adapter;
 
 use UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi;
 use UniceSIL\SyllabusImporterToolkit\Course\CourseInfoInterface;
+use UniceSIL\SyllabusImporterToolkit\Structure\StructureInterface;
 
 /**
  * Class CourseInfoAdapter
@@ -17,9 +18,9 @@ class CourseInfoAdapter implements CourseInfoInterface
     private $yearId;
 
     /**
-     * @var string
+     * @var StructureInterface
      */
-    private $structureId;
+    private $structure;
 
     /**
      * @var string
@@ -62,7 +63,7 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function __construct(ElementPedagogi $elp)
     {
-        $this->structureId = $elp->getCodCmp()->getCodCmp();
+        $this->structure = new StructureAdapter($elp->getCodCmp());
         $this->title = $elp->getLibElp();
         $this->ects = $elp->getNbrCrdElp();
     }
@@ -87,20 +88,20 @@ class CourseInfoAdapter implements CourseInfoInterface
     }
 
     /**
-     * @return string
+     * @return StructureInterface
      */
-    public function getStructureId(): string
+    public function getStructure(): StructureInterface
     {
-        return $this->structureId;
+        return $this->structure;
     }
 
     /**
-     * @param string $structureId
+     * @param StructureInterface $structure
      * @return CourseInfoAdapter
      */
-    public function setStructureId(string $structureId): CourseInfoAdapter
+    public function setStructure(StructureInterface $structure): CourseInfoAdapter
     {
-        $this->structureId = $structureId;
+        $this->structure = $structure;
 
         return $this;
     }

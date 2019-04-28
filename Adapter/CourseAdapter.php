@@ -125,7 +125,7 @@ class CourseAdapter implements CourseInterface
      * If return true, create the course if does not already exist in Syllabus database
      * @return bool
      */
-    public function createCourseIfNotExist(): bool
+    public function createIfNotExist(): bool
     {
         return true;
     }

@@ -94,6 +94,7 @@ class CourseImporter implements CourseImporterInterface
     /**
      * @param ElementPedagogi $elp
      * @return CourseInfoCollection
+     * @throws \Exception
      */
     private function getCourseInfos(ElementPedagogi $elp)
     {
