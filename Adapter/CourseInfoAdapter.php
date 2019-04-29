@@ -139,7 +139,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setEcts($ects)
     {
-        if(!is_int($ects)) $ects = null;
+        if(is_null($ects)) $ects = null;
+        if(!is_string($ects)) $ects = strval($ects);
         $this->ects = $ects;
 
         return $this;
@@ -159,7 +160,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setDomain($domain)
     {
-        if(!is_string($domain)) $domain = null;
+        if(is_null($domain)) $domain = null;
+        if(!is_string($domain)) $domain = strval($domain);
         $this->domain = $domain;
 
         return $this;
@@ -179,7 +181,8 @@ class CourseInfoAdapter implements CourseInfoInterface
      */
     public function setPeriod($period)
     {
-        if(!is_string($period)) $period = null;
+        if(is_null($period)) $period = null;
+        if(!is_string($period)) $period = strval($period);
         $this->period = $period;
 
         return $this;
