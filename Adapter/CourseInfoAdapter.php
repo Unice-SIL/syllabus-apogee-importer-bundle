@@ -64,8 +64,8 @@ class CourseInfoAdapter implements CourseInfoInterface
     public function __construct(ElementPedagogi $elp)
     {
         $this->structure = new StructureAdapter($elp->getCodCmp());
-        $this->title = $this->setTitle($elp->getLibElp());
-        $this->ects = $this->setEcts($elp->getNbrCrdElp());
+        $this->setTitle($elp->getLibElp());
+        $this->setEcts($elp->getNbrCrdElp());
     }
 
     /**
