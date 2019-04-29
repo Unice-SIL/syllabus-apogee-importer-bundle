@@ -28,7 +28,7 @@ class CourseInfoAdapter implements CourseInfoInterface
     private $title;
 
     /**
-     * @var null|int
+     * @var null|float
      */
     private $ects;
 
@@ -126,21 +126,21 @@ class CourseInfoAdapter implements CourseInfoInterface
     }
 
     /**
-     * @return int|null
+     * @return float|null
      */
-    public function getEcts(): ?int
+    public function getEcts(): ?float
     {
         return $this->ects;
     }
 
     /**
-     * @param int|null $ects
+     * @param float|null $ects
      * @return CourseInfoAdapter
      */
     public function setEcts($ects)
     {
         if(is_null($ects)) $ects = null;
-        if(!is_string($ects)) $ects = strval($ects);
+        if(!is_float($ects)) $ects = strval($ects);
         $this->ects = $ects;
 
         return $this;
