@@ -1,13 +1,8 @@
 services:
 
-    _defaults:
-        autowire: true
-        autoconfigure: true
-        public: false
-
     unicesil.syllabus_apogee_importer.course:
         class: UniceSIL\SyllabusApogeeImporterBundle\Importer\CourseImporter
         public: true
-        arguments: [ '%unice_sil_syllabus_apogee_importer%' ]
+        arguments: [ '%unice_sil_syllabus_apogee_importer%', '@doctrine' ]
 
 

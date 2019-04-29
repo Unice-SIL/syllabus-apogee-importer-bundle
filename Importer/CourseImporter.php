@@ -131,4 +131,12 @@ class CourseImporter implements CourseImporterInterface
         return $courseInfos;
     }
 
+    /**
+     * @param array $args
+     * @return mixed
+     */
+    public function setArgs(array $args = [])
+    {
+        // TODO: Implement setArgs() method.
+    }
 }
