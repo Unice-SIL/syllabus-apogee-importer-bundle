@@ -140,7 +140,7 @@ class CourseInfoAdapter implements CourseInfoInterface
     public function setEcts($ects)
     {
         if(is_null($ects)) $ects = null;
-        if(!is_float($ects)) $ects = strval($ects);
+        if(!is_float($ects)) $ects = floatval($ects);
         $this->ects = $ects;
 
         return $this;
