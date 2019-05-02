@@ -371,26 +371,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
                 comment: 'Identifiant navette parcours'
             column: FOR_INMP
     manyToOne:
-        codCpg:
-            targetEntity: AdipCampagne
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_CPG:
-                    referencedColumnName: COD_CPG
-            orphanRemoval: false
-        codCfm:
-            targetEntity: ConfigMention
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_CFM:
-                    referencedColumnName: COD_CFM
-            orphanRemoval: false
         codCgeMinVet:
             targetEntity: CentreGestion
             cascade: {  }
@@ -410,36 +390,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
             joinColumns:
                 COD_CMP:
                     referencedColumnName: COD_CMP
-            orphanRemoval: false
-        codCnv:
-            targetEntity: Convention
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_CNV:
-                    referencedColumnName: COD_CNV
-            orphanRemoval: false
-        codDue:
-            targetEntity: DureeEtape
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_DUE:
-                    referencedColumnName: COD_DUE
-            orphanRemoval: false
-        codEsi:
-            targetEntity: EtapeSis
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_ESI:
-                    referencedColumnName: COD_ESI
             orphanRemoval: false
         codPan1:
             targetEntity: PeriodeAno
@@ -481,16 +431,7 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionEtape:
                 COD_PAN_4:
                     referencedColumnName: COD_PAN
             orphanRemoval: false
-        codPty:
-            targetEntity: ParcoursType
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_PTY:
-                    referencedColumnName: COD_PTY
-            orphanRemoval: false
+
         codTrePos:
             targetEntity: TypResultat
             cascade: {  }

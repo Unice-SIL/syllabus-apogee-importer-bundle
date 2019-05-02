@@ -89,16 +89,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\Etape:
                 default: 'N'
             column: TEM_OUV_DRT_BRS
     manyToOne:
-        codAct:
-            targetEntity: ActionLolf
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_ACT:
-                    referencedColumnName: COD_ACT
-            orphanRemoval: false
         codCur:
             targetEntity: CursusLmd
             cascade: {  }

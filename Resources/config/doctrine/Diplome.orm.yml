@@ -97,16 +97,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\Diplome:
                 COD_DFD:
                     referencedColumnName: COD_DFD
             orphanRemoval: false
-        codEtb:
-            targetEntity: Etablissement
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_ETB:
-                    referencedColumnName: COD_ETB
-            orphanRemoval: false
         codNdi:
             targetEntity: NatureDiplome
             cascade: {  }
@@ -116,26 +106,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\Diplome:
             joinColumns:
                 COD_NDI:
                     referencedColumnName: COD_NDI
-            orphanRemoval: false
-        codNim:
-            targetEntity: NiveauIntermini
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_NIM:
-                    referencedColumnName: COD_NIM
-            orphanRemoval: false
-        codSds:
-            targetEntity: SecDisSis
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_SDS:
-                    referencedColumnName: COD_SDS
             orphanRemoval: false
         codTpdEtb:
             targetEntity: TypDiplome

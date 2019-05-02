@@ -167,35 +167,4 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\TypDiplome:
             options:
                 comment: 'Echelle de priorité dans le calcul de l''étape première.'
             column: COD_ECH
-    manyToOne:
-        codNif:
-            targetEntity: NiveauFormation
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_NIF:
-                    referencedColumnName: COD_NIF
-            orphanRemoval: false
-        codTds:
-            targetEntity: TypDiplomeSise
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_TDS:
-                    referencedColumnName: COD_TDS
-            orphanRemoval: false
-        codTdsInt:
-            targetEntity: TypDiplomeSise
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_TDS_INT:
-                    referencedColumnName: COD_TDS
-            orphanRemoval: false
     lifecycleCallbacks: {  }

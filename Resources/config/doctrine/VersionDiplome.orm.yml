@@ -337,26 +337,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionDiplome:
                 comment: 'Identifiant navette parcours'
             column: FOR_INMP
     manyToOne:
-        codCfm:
-            targetEntity: ConfigMention
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_CFM:
-                    referencedColumnName: COD_CFM
-            orphanRemoval: false
-        codPer:
-            targetEntity: Personnel
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_PER:
-                    referencedColumnName: COD_PER
-            orphanRemoval: false
         codCur:
             targetEntity: CursusLmd
             cascade: {  }
@@ -366,56 +346,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionDiplome:
             joinColumns:
                 COD_CUR:
                     referencedColumnName: COD_CUR
-            orphanRemoval: false
-        codSisVdiInt:
-            targetEntity: DiplomeSise
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_SIS_VDI_INT:
-                    referencedColumnName: COD_DIS
-            orphanRemoval: false
-        codSisVdi:
-            targetEntity: DiplomeSise
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_SIS_VDI:
-                    referencedColumnName: COD_DIS
-            orphanRemoval: false
-        codEdoVdi:
-            targetEntity: EcoleDoctorale
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_EDO_VDI:
-                    referencedColumnName: COD_EDO
-            orphanRemoval: false
-        codEtbCom:
-            targetEntity: Etablissement
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_ETB_COM:
-                    referencedColumnName: COD_ETB
-            orphanRemoval: false
-        codFiv:
-            targetEntity: FinaliteVdi
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_FIV:
-                    referencedColumnName: COD_FIV
             orphanRemoval: false
         codMev:
             targetEntity: MentionVdi
@@ -466,16 +396,6 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\VersionDiplome:
             joinColumns:
                 COD_PAN_4:
                     referencedColumnName: COD_PAN
-            orphanRemoval: false
-        codPty:
-            targetEntity: ParcoursType
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_PTY:
-                    referencedColumnName: COD_PTY
             orphanRemoval: false
         codSvd:
             targetEntity: SpecialiteVdi
