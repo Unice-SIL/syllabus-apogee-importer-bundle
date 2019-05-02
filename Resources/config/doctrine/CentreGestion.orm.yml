@@ -272,27 +272,4 @@ UniceSIL\SyllabusApogeeImporterBundle\Entity\CentreGestion:
                 comment: 'Témoin d''activation/désactivation de la dématérialisation des PJ pour IA-Primo'
                 default: 'N'
             column: TEM_MINP_DEMAT_CGE
-    manyToOne:
-        codPosAdrCge:
-            targetEntity: ComBdi
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_POS_ADR_CGE:
-                    referencedColumnName: COD_BDI
-                COD_COM_ADR_CGE:
-                    referencedColumnName: COD_COM
-            orphanRemoval: false
-        codCpa:
-            targetEntity: Cpam
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                COD_CPA:
-                    referencedColumnName: COD_CPA
-            orphanRemoval: false
     lifecycleCallbacks: {  }
