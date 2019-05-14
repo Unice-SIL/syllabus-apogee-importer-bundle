@@ -4,6 +4,7 @@ namespace UniceSIL\SyllabusApogeeImporterBundle\Adapter;
 
 use UniceSIL\SyllabusApogeeImporterBundle\Entity\ElementPedagogi;
 use UniceSIL\SyllabusImporterToolkit\Course\CourseInfoInterface;
+use UniceSIL\SyllabusImporterToolkit\Permission\PermissionCollection;
 use UniceSIL\SyllabusImporterToolkit\Structure\StructureInterface;
 
 /**
@@ -251,4 +252,11 @@ class CourseInfoAdapter implements CourseInfoInterface
         return $this;
     }
 
+    /**
+     * @return PermissionCollection
+     */
+    public function getCoursePermission(): PermissionCollection
+    {
+        return new PermissionCollection();
+    }
 }
